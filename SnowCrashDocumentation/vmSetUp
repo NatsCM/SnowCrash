@@ -1,0 +1,31 @@
+
+
+Dans VMM :
+
+	Edit -> Preferences -> select "Enable XML editing"
+
+	File -> Add Connection -> select "QEMU/KVM user session" -> connect
+
+	File -> New Virtual Machine -> select "Local install media (ISO image or CDROM) -> Forward -> Browse -> Browse Local -> Select ISO "SnowCrash.iso" -> operating system "Linux — Ubuntu (64-bit)" -> Forward -> memory "1024" -> CPUs "1" -> Forward -> Select placement for volume (left side) could be sgoinfre -> volumes + (if volume doesn't exist) -> Name "..." -> Capacity could be between 10 and 20 -> Finish -> Forward -> Name "SnowCrash" or what ever -> select "Customize configuration before install" -> Finish -> a window will open select "Overview" -> select "XML" -> add xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'   to the first line <domain ...> -> delete the whole <interface>…</interface> part to replace network configuration -> Before line "</domain>" paste the following lines :
+<qemu:commandline>
+  <qemu:arg value='-netdev'/>
+  <qemu:arg value='user,id=mynet.0,net=10.0.10.0/24,hostfwd=tcp::22222-:4242'/>
+  <qemu:arg value='-device'/>
+  <qemu:arg value='rtl8139,netdev=mynet.0'/>
+</qemu:commandline>
+-> Apply -> select Boot Options (on the left) -> select only "SATA CDROM 1" so the installation will run on the good ISO -> select "Begin Istallation" on the upper left side
+
+	At this point normally the VM is ready
+
+	For the SSH conection :
+
+	-> in a host's terminal run "ssh -p 22222 level00@localhost"
+
+	-> for the first time your host attempts to connect to this SSH server (localhost:22222), it does not yet have the VM's public key in its ~/.ssh/known_hosts file. so it will ask you "Are you sure you want to continue connecting (yes/no/[fingerprint])?" and you will tap "Yes"
+
+	NOTE : at the moment of running again the VM I have the following message :
+	"Boot failed: not a bootable disk"
+	
+	In my case this happened because at some point I forgot a step, but this is not a problem :
+
+	Open VMM, select the VM, select "Open", go to "Boot Options" in the VM settings and select "SATA CDROM 1", then put the disk ISO on the text bar, apply or save and run the VM.

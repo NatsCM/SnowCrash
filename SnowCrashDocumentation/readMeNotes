@@ -1,0 +1,17 @@
+
+
+* Type of encryption used :
+
+	Caesar cipher or Caesar code (in french "code César") :
+	
+	Is a monoalphabetic substitution cipher, where each letter is 				replaced by another letter a few places further along in the alphabet (i.e., shifted but always the same for the same message).
+
+	The shift distance is chosen based on a number called the offset, which can be to the right (A to B) or to the left (B to A).
+
+	For any shift to the right (by +N), there is an equivalent shift 		to the left (by 26-N) because the alphabet rotates on itself. The Caesar cipher is sometimes called a rotation cipher.
+	
+	For more inofrmation about the Caesar code (french site) :
+
+	https://www.dcode.fr/chiffre-cesar
+	
+	

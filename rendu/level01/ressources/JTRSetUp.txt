@@ -1,0 +1,23 @@
+to install john the ripper in the school computer I first went to github
+
+https://github.com/openwall/john
+
+I copied the HTTPS link there and git cloned it 
+
+For the instalation I followed these steps :
+
+go in the john directory, then go in src and run :
+
+./configure && make -s clean && make -sj4
+
+then go to the run directory :
+
+cd ../run
+
+to checck if john is working well run :
+
+./john --test
+
+then I ran john giving it the file containing the text to crack :
+
+./john /home/ncardozo/Documents/SnowCrash/rendu/level01/ressources/JTR.txt
