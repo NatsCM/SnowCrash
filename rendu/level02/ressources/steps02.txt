@@ -1,0 +1,34 @@
+-> ls -la
+
+a file that seams interesting is in here :
+
+"level02.pcap"
+
+-> tcpdump -r level02.pcap
+
+tcpdump displays the packages one by one so ...
+
+a lot of lines appear
+
+so from the host i'll copy the file to be able to use Wireshark
+
+-> scp -P 22222 level02@localhost:level02.pcap level02
+
+Now that I can check the file locally
+
+-> strings level02.pcap | grep -i "login"
+
+wwwbugs login: @f&NV.
+Login incorrect
+wwwbugs login: df&N
+
+-> strings level02.pcap | grep -i "pass"
+
+Password: Nf&Nat
+
+-> su flag02
+
+Password: 
+su: Authentication failure
+
+This is not the right way to search so
