@@ -1,0 +1,6 @@
+
+-> ls -la
+
+one interesting file
+
+-rwsr-sr-x 1 flag07 level07 ... level07

