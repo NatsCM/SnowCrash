@@ -31,4 +31,29 @@ Password: Nf&Nat
 Password: 
 su: Authentication failure
 
-This is not the right way to search so
+Oupsy..
+
+-> Lets go to wireshark
+
+Once wireshark is installed go to 
+
+file -> open -> level02.pcap
+
+-> Analyze -> Follow -> TCP Stream
+
+Password: ft_wandr...NDRel.LOL
+
+I try the password but failure again :/
+
+-> Show data as -> Hex Dump
+
+ft_waNDReL0L
+
+Password:
+Don't forget to launch getflag !
+
+-> getflag
+
+Check flag.Here is your token : kooda2puivaav1idi4f57q8iq
+
+-> level03 ..

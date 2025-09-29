@@ -1,0 +1,9 @@
+
+.pl file :
+
+A file containing source code written in the Perl programming
+language, used to create scripts, automate tasks, analyse text,
+and manage servers.
+
+Its content is plain text with Perl instructions, variables, and
+comments, easily editable with a text editor or tools.

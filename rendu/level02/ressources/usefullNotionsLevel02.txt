@@ -18,3 +18,11 @@ https://www.endace.com/learn/what-is-a-pcap-file#:~:text=PCAP%20files%20are%20a%
 
 
 To exploit this kind of files it is possible to use Wireshark or tcpdump
+
+
+wireshark install on ubuntu :
+
+sudo apt install wireshark -y
+
+wireshark
+
