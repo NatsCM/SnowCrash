@@ -1,0 +1,48 @@
+
+-> ls -la
+
+Again two interesting lines :
+
+-rwsr-s---+ flag08 level08 ... level08
+
+-rw-------  flag08 flag08  ... token
+
+-> ./level09 token
+
+tpmhr
+
+-> cat token
+
+f4kmm6p|=?p?n??DB?Du{??
+
+let's try this as the password :
+
+-> su flag09
+
+Password:
+su: Authentication failure
+
+-> su level10
+
+Password:
+su: Authentication failure
+
+Let's try something else :
+
+-> ./level09 'f4kmm6p|=pnDBDu{'
+
+f5op:u?DxwNMP??
+
+Ok let's try with this again. Even if it seems to easy :
+
+-> su flag09
+
+Password:
+su: Authentication failure
+
+-> su level10
+
+Password:
+su: Authentication failure
+
+It doesn't work neither 

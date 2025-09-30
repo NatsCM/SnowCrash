@@ -8,7 +8,16 @@ we find two interesting lines :
 
 -> cat level06.php
 
----- faire ça à nouveau pour copier code PHP -----
+(See level06.php content on the file with that name in this directory)
+
+So, after inspecting the code, we can see that it's actually posible 
+to inject something this code, so we can exploit it.
+
+This is possible because The /e transforms the replacement string into 
+executed PHP code — so if we get to control the text captured between 
+[x ...], we can close the string and inject code.
+
+So let's try :
 
 -> echo '[x ${`getflag`}]' > /tmp/getflag
 
