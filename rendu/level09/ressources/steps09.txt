@@ -45,4 +45,31 @@ su: Authentication failure
 Password:
 su: Authentication failure
 
-It doesn't work neither 
+It doesn't work neither
+
+When observing the following result :
+f5op:u?DxwNMP??
+
+It seemps that the return of the program is the argument given
+crypted with a sort of ROT+index
+
+Then maybe finding a way to reverse this will give us the password :
+
+by writting a script that will decrypt token, for example
+
+(The script file is in this same directory named as 'level09Script.py')
+
+-> python level09Script.py token
+
+f3iji1ju5yuevaus41q1afiuq
+
+-> su flag09
+
+Password:
+Don't forget to launch getflag !
+
+-> getflag
+
+Check flag.Here is your token : s5cAJpM8ev6XHw998pRWG728z
+
+-> su level10 ..

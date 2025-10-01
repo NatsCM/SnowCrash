@@ -1,0 +1,14 @@
+
+-> ls -la
+
+the next two lines seems exploitable :
+
+-rwsr-sr-x+ flag10 level10 ... level10
+
+-rw-------  flag10 flag10  ... token
+
+-> ./level10 token
+
+./level10 file host
+    sends file to host if you have access to it
+
