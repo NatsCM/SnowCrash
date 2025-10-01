@@ -1,0 +1,18 @@
+
+Lua :
+
+Small, lightweight, embeddable scripting language commonly used
+to configure apps/games, extend programs (C API), or write 
+utilities.
+
+Its syntax is simple : functions, tables (equivalent to dicts/objects),
+loops, require, dofile, etc.
+
+Lua scripts can execute system code if the author has used functions
+such as os.execute, io.popen, loadstring/load (dynamic evaluation), 
+or dofile on controllable files → exploitation vectors.
+
+We often search for the following in a .lua file: file paths, flag 
+keywords, calls to os.*, io.*, load, require, and any file reading.
+
+https://www.stackhawk.com/blog/lua-command-injection-examples-and-prevention/

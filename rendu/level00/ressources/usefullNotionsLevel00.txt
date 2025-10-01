@@ -13,5 +13,3 @@
 	For more inofrmation about the Caesar code (french site) :
 
 	https://www.dcode.fr/chiffre-cesar
-	
-	

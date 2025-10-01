@@ -1,0 +1,19 @@
+
+The SCP command :
+
+The scp command is used to securely copy files between hosts on a network.
+
+This command can be used from the host to copy files from the VM
+or to send files to the VM
+
+So to copy files form the VM the commandline is :
+
+-> scp -P XXXX VmIpAddress@localhost:/path/to/the/file/in/the/vm/filename 
+/path/in/the/host/
+
+And to send a file from the host to the VM :
+
+-> scp -P XXXX /local/path/to/the/file/filename 
+VmIpAddress@localhost:/destination/path/in/the/VM
+
+https://www.w3schools.com/bash/bash_scp.php
