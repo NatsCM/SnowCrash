@@ -8,10 +8,8 @@ we find two interesting lines :
 
 -> cat level06.php
 
-(See level06.php content on the file with that name in this directory)
-
 So, after inspecting the code, we can see that it's actually posible 
-to inject something this code, so we can exploit it.
+to inject something in it, so we can exploit it.
 
 This is possible because The /e transforms the replacement string into 
 executed PHP code — so if we get to control the text captured between 

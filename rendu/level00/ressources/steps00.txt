@@ -33,13 +33,17 @@ I try with the hexa in the file
 
 -> xxd /usr/sbin/john
 
+(displays addresses and an ASCII column)
+
 This texte appears 
 
 "0000000: 6364 6969 6464 7770 6773 7774 6774 0a    cdiiddwpgswtgt."
 
 -> xxd -p /usr/sbin/john
 
-I try thhe following combination with su flag00
+(Each byte is represented by its two hexadecimal digits)
+
+I try the following combination with su flag00
 
 63646969646477706773777467740a
 
@@ -51,15 +55,15 @@ I try a few things without success until I red the search bar "Tapez par exemple
 
 Then I take a look to the tool :
 
-The Cesar code is a monoalphabetic substitution cipher, where each letter is replaced by another letter located a little further along in the alphabet (i.e., shifted but always identical for the same message).
+The Cesar code is a monoalphabetic substitution cipher, where each letter is replaced by
+another letter located a little further along in the alphabet (i.e., shifted but always
+identical for the same message).
 
 I put the encrypted code there and the first output is :
 
 nottoohardhere
 
 -> su flag00
-
--> nottoohardhere
 
 level00@SnowCrash:~$ su flag00
 Password: 

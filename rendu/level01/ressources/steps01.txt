@@ -44,7 +44,7 @@ So I put the next command on the host terminal
 
 -> scp -P 22222 level01@localhost:/tmp/JTR.txt JTR.txt
 
-Where JTR.txt is located in the parent folder of this exercise
+Where JTR.txt is located in this same folder
 
 Then the file is ready to be given to john as an argument
 (still in the host)

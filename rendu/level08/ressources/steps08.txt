@@ -32,11 +32,6 @@ So let's try
 
 quif5eloekouj29ke0vouxean
 
--> su level09
-
-Password:
-su: Authentication failure
-
 -> su flag08
 
 Password:

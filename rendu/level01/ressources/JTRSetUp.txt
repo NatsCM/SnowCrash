@@ -14,7 +14,7 @@ then go to the run directory :
 
 cd ../run
 
-to checck if john is working well run :
+to check if john is working well run :
 
 ./john --test
 
